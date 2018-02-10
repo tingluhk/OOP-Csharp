@@ -68,7 +68,7 @@ class Run{
             // v01.Parts.Count = 2 , however if we accidentally have another method rewrite the field.
             v01.Reset();
             System.Console.WriteLine($"v01.Parts.Count = {v01.Parts.Count}");
-            // v01.Parts.Count = 0, to fix this, we add readonly modifier to Parts field.
+            // v01.Parts.Count = 0, to fix this, we add readonly modifier to Parts field, alternatively you can use const variable to achieve same thing.
 
         }
 
