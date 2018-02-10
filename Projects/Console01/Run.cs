@@ -83,5 +83,11 @@ class Run{
 
         }
         
+        public static void Method08(){
+            // Indexer, it is a simple way to access elements in class.
+            IndexerSample idx = new IndexerSample();
+            idx["name"] = "John P";
+            System.Console.WriteLine($"idx[name] = {idx["name"]}");
+        }
 
 }
