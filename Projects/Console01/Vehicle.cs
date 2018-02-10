@@ -13,11 +13,11 @@ using System.Collections.Generic;
 
 class Vehicle{
      
-     private string Name;
-     private int Id;
+     public string Name;
+     public int Id;
 
      // if you don't initialize LIST<OBJ> variable there will be error "Field 'Vehicle.Parts' is never assigned to, and will always have its default value null" to fix it, just add this.Parts = new List<Parts>() in constructor.
-     public List<Parts> Parts;
+     public readonly List<Parts> Parts;
      
      public Vehicle(){
          this.Name = "default Name";
@@ -39,4 +39,9 @@ class Vehicle{
          System.Console.WriteLine($"The spec is Name = {this.Name}, and ID = {this.Id}");
      }
      
+     public void Reset(){
+          // because of readonly modifier, this following line will throw error.
+          // this.Parts = new List<Parts>();
+     }
+
  }
