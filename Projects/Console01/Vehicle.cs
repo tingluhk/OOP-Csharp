@@ -9,13 +9,20 @@
  - Try instantiate objects with different constructors.
  */
 
- class Vehicle{
+using System.Collections.Generic;
+
+class Vehicle{
      
      private string Name;
      private int Id;
+     
+     // if you don't initialize LIST<OBJ> variable there will be error "Field 'Vehicle.Parts' is never assigned to, and will always have its default value null" to fix it, just add this.Parts = new List<Parts>() in constructor.
+     public List<Parts> Parts;
+     
      public Vehicle(){
          this.Name = "default Name";
          this.Id = 0000;
+         this.Parts = new List<Parts>();
      }
 
     public Vehicle(string name){
