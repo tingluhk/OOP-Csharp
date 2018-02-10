@@ -72,6 +72,16 @@ class Run{
 
         }
 
+        public static void Method07()
+        {
+            Person p01 = new Person();
+            // let's try to set the "IdCardNumber" field directly, we see we can't do it
+            // p01.IdCardNumber = "1213";
+            // we need to use public method to set the value of a private field
+            p01.SetIdCardNumber("0145");
+            System.Console.WriteLine($"{p01.GetIdCardNumber()}");
+
+        }
         
 
 }

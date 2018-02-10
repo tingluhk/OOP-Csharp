@@ -12,8 +12,9 @@ namespace Console01
             Run.Method03();
             Run.Method04();
             Run.Method05();
-             */
             Run.Method06();
+             */
+            Run.Method07();
         }
     }
 }
