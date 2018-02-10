@@ -15,7 +15,7 @@ class Vehicle{
      
      private string Name;
      private int Id;
-     
+
      // if you don't initialize LIST<OBJ> variable there will be error "Field 'Vehicle.Parts' is never assigned to, and will always have its default value null" to fix it, just add this.Parts = new List<Parts>() in constructor.
      public List<Parts> Parts;
      
@@ -25,11 +25,12 @@ class Vehicle{
          this.Parts = new List<Parts>();
      }
 
-    public Vehicle(string name){
+    public Vehicle(string name) : this () {
+        // to not repeat the this.Parts = new List, we can call the first constructor with : this(); try not to use this(), its hard to maintain. its best just leave the first constructor to deal with the new List initialization.
          this.Name = name;
          this.Id = 0000;
      }
-     public Vehicle(int id, string name){
+     public Vehicle(int id, string name) : this (name) {
          this.Name = name;
          this.Id = id;
      }
