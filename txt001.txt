@@ -1,6 +1,0 @@
-
-This Is Thomas file
-
-Func thomas(){
-	print(“yo man”)
-}
