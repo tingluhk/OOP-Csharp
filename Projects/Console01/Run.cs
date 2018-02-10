@@ -3,7 +3,8 @@ this class is just a wrapper to Run Static Methods for the Program
  */
 
 using System;
-
+using Log = Console01.Log;
+using Veh = Console01.Vehicles;
 class Run{
         public static void Method01(int Age, string Name){
             // to initiate an object from a class, use new keyword;
@@ -21,9 +22,9 @@ class Run{
         }
         public static void Method03(){
             // here we test the constructors from Vehicle Class.
-            Vehicle v01 = new Vehicle();
-            Vehicle v02 = new Vehicle("Toyota A410");
-            Vehicle v03 = new Vehicle(112, "Honda HD14");
+            Veh.Vehicle v01 = new Veh.Vehicle();
+            Veh.Vehicle v02 = new Veh.Vehicle("Toyota A410");
+            Veh.Vehicle v03 = new Veh.Vehicle(112, "Honda HD14");
 
             v01.ShowVehicleSpecs();
             v02.ShowVehicleSpecs();
@@ -37,10 +38,10 @@ class Run{
         }
 
 
-        public  static void Method04()
+        public static void Method04()
         {
             // object initializer. this syntax is to instantiate object without creating the constructor, however only works with public fields. this way we don't have to create multiple constructors.
-            Vehicle v01 = new Vehicle{
+            Veh.Vehicle v01 = new Veh.Vehicle{
                 Id = 1414,
                 Name = "Porsch"
             };
@@ -61,9 +62,9 @@ class Run{
         public static void Method06()
         {
             // readonly modifier
-            var v01 = new Vehicle("Tesla");
-            v01.Parts.Add(new Parts("wheels", 1344));
-            v01.Parts.Add(new Parts("chair", 1413));
+            var v01 = new Veh.Vehicle("Tesla");
+            v01.Parts.Add(new Veh.Parts("wheels", 1344));
+            v01.Parts.Add(new Veh.Parts("chair", 1413));
             System.Console.WriteLine($"v01.Parts.Count = {v01.Parts.Count}");
             // v01.Parts.Count = 2 , however if we accidentally have another method rewrite the field.
             v01.Reset();
@@ -90,4 +91,67 @@ class Run{
             System.Console.WriteLine($"idx[name] = {idx["name"]}");
         }
 
+        public static void Method09(){
+            // Class loose Coupling, to createa a loosely coupled app, one need to know the - Encapsulation, - The relationships between Classes, - Interfaces.
+            // Inheritance, to inherit from parent class, and have all its methods and properties
+            Veh.Car car01 = new Veh.Car();
+            car01.Name = "newly inherited Car";
+            car01.Id = 1414;
+            car01.Drive();
+            /* -------------  result  ------------------
+            newly inherited Car, ID = 1414 is  Moving...
+            */
+
+        }
+
+
+        public static void Method10()
+        {
+            // Composition is a way to decouple the classes, so that one is no longer dependant on the other, and they can be modified much more easily. similar to inheritance.
+            Log.Robot robot01 = new Log.Robot(new Log.Logger("hi there I am Robot"));
+            Log.Orc orc01 = new Log.Orc(new Log.Logger("hi there I am Orc"));
+        }
+
+        public static void Method11()
+        {
+            /*
+            Access Modifier,
+            1 - Private (Accessible only from the class)
+            2 - Protected (Accessible only from the class and its derived classes)
+            3 - Internal (Accessible only from the same Assembly)
+            4 - Protected Internal (Accessible only from the same Assembly or any derived Classes)
+             */
+        }
+
+        public static void Method12()
+        {
+            // Constructor and Inheritance. (Added Car:base()), Car class is getting a parameter, however it is passing the parameter to the Base class so that the Base can modify the registration number. the Private readonly field of _registration
+            Veh.Car car01 = new Veh.Car("reg10414");
+            
+        }
+
+        public static void Method13()
+        {
+        }
+
+
+        public static void Method14()
+        {
+        }
+
+        public static void Method15()
+        {
+        }
+
+        public static void Method16()
+        {
+        }
+
+        public static void Method17()
+        {
+        }
+
+        public static void Method18()
+        {
+        }
 }
