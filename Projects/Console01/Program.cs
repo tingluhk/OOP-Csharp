@@ -10,7 +10,7 @@ namespace Console01
             Run.Method01(22,"john");
             Run.Method02();
              */
-            Run.Method12();
+            Run.Method14();
 
 
         }

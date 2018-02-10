@@ -5,6 +5,11 @@ this class is just a wrapper to Run Static Methods for the Program
 using System;
 using Log = Console01.Log;
 using Veh = Console01.Vehicles;
+using Sp = Console01.Shapes;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+
 class Run{
         public static void Method01(int Age, string Name){
             // to initiate an object from a class, use new keyword;
@@ -132,11 +137,36 @@ class Run{
 
         public static void Method13()
         {
+            // Upcasting and Downcastin
+            Sp.Square sq01 = new Sp.Square();
+            sq01.Colors = "blue";
+            Sp.Shape shape01 = sq01;
+            sq01.Height = 200;
+            shape01.Height = 100;
+            // here because shape01 and sq01 both pointing to the same object reference, so that the result = 100;
+            System.Console.WriteLine($"shape.Height = {shape01.Height}");
         }
 
 
         public static void Method14()
         {
+            StreamReader reader01 = new StreamReader(new MemoryStream());
+            var list = new ArrayList();
+            // you can add any dataType here; however its not really good practise in real world
+            list.Add(1);
+            list.Add("john");
+            list.Add(new Person());
+
+            var list02 = new List<Sp.Shape>();
+            list02.Add(new Sp.Square());
+            list02.Add(new Sp.Circle());
+            list02.Add(new Sp.Triangle());
+
+            Sp.Shape shape01 = new Sp.Circle();
+            Sp.Circle circle01 = (Sp.Circle) shape01;
+            circle01.Radius = 12.14f;
+            circle01.Area();
+
         }
 
         public static void Method15()
