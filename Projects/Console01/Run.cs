@@ -166,22 +166,48 @@ class Run{
             Sp.Circle circle01 = (Sp.Circle) shape01;
             circle01.Radius = 12.14f;
             circle01.Area();
-
+            var shape02 = (Sp.Circle) shape01;
+            shape02.Radius = 1.14f;
+            shape02.Area();
+            // generally downcasting or upcasting so that we can get access to the methods that destination class holds.
         }
 
         public static void Method15()
         {
+            var list = new ArrayList();
+            list.Add(1);
+            list.Add("john");
+            list.Add(DateTime.Now);
+
+            var number = (int) list[0];
+            System.Console.WriteLine($"number = {number}");
+            //because list[1] is a string type, it will throw error. System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Int32'.
+
+            // to fix it use generics
+            var list02 = new List<int>();
+            list02.Add(12);
+            list02.Add(22);
+            
         }
 
         public static void Method16()
         {
+            // virtual overriding
+            Sp.Shape circle = new Sp.Circle();
+            circle.Draw();
         }
 
         public static void Method17()
         {
+            // abstract classes, abstract means the method doesn't have any implementation, so its waiting for the derived class to make the implementation
+            // adding public abstract class Shape
+            Sp.Circle circle = new Sp.Circle();
+            circle.Math01();
         }
 
         public static void Method18()
         {
+            
+
         }
 }

@@ -8,3 +8,13 @@ e.g. var number = 12;
 
 e.g. Person person01 = new Person();
 
+
+
+
+## ------------------------------------------------------
+
+
+## sealed modifier
+sealed can only be applied to the derived classes that has override or abstract modifiers, generally don't use sealed, unless if you have real good reason to use it.
+
+
