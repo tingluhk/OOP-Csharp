@@ -2,7 +2,12 @@ using System;
 
 namespace Console01.Factory
 {
-    public class PriceCalculator
+    public interface IPriceCalculator{
+        float CalculatePainting(Order order);
+    }
+
+
+    public class PriceCalculator : IPriceCalculator
     {
         public float CalculatePainting(Order order)
         {

@@ -4,9 +4,9 @@ namespace Console01.Factory
 {
     public class PaintShop
     {
-        private readonly PriceCalculator _priceCalculator;
-        public PaintShop(PriceCalculator priceCalculator){
-            _priceCalculator = priceCalculator;
+        private readonly IPriceCalculator _priceCalculator;
+        public PaintShop(IPriceCalculator PriceCalculator){
+            _priceCalculator = PriceCalculator;
         }
 
         public void Painting(Order order){
@@ -17,6 +17,8 @@ namespace Console01.Factory
                     Cost = _priceCalculator.CalculatePainting(order),
                     PaintingDate = DateTime.Today.AddDays(1)
                 };
+                
+                System.Console.WriteLine($"order placed paintJob Cost =  {order.PaintJob.Cost}");
            
         }
     }

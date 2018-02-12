@@ -6,6 +6,8 @@ using System;
 using Log = Console01.Log;
 using Veh = Console01.Vehicles;
 using Sp = Console01.Shapes;
+using Fac = Console01.Factory;
+
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -207,8 +209,12 @@ class Run{
 
         public static void Method18()
         {
-            
-
+            // Interface, the main goal of interface is to create loosely Coupled apps.
+            Fac.PaintShop paintshop = new Fac.PaintShop(new Fac.PriceCalculator());
+            Fac.Order order = new Fac.Order();
+            order.TotalPrice = 50;
+            paintshop.Painting(order);
+            System.Console.WriteLine($"order.isPainted = {order.isPainted}");
         }
 
         public static void Method19()
