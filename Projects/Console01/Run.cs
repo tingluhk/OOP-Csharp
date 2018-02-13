@@ -7,6 +7,7 @@ using Log = Console01.Log;
 using Veh = Console01.Vehicles;
 using Sp = Console01.Shapes;
 using Fac = Console01.Factory;
+using Ext = Console01.Extensibilty;
 
 using System.IO;
 using System.Collections;
@@ -219,7 +220,12 @@ class Run{
 
         public static void Method19()
         {
-            
+            // Dependency Injection, Extensibility / Dbmigrator is DI an interface in its constructor
+            Ext.DbMigrator migrator = new Ext.DbMigrator(new Ext.ConsoleLogger());
+            migrator.Migrate();
+            // to create a Logger for local File Logger, this is changing the behavior of the program, instead of changing the code, and this is the power of DI and OCP, open for extension, and closed for modification,
+            Ext.DbMigrator FileMigrator = new Ext.DbMigrator(new Ext.FileLogger("/Volumes/mac1TB02/mac1TB02_share/video/video_canBeDeleted/001/log.txt"));
+            FileMigrator.Migrate();
 
         }
 
