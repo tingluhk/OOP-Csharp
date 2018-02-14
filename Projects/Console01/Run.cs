@@ -8,6 +8,7 @@ using Veh = Console01.Vehicles;
 using Sp = Console01.Shapes;
 using Fac = Console01.Factory;
 using Ext = Console01.Extensibilty;
+using Mail = Console01.Mails;
 
 using System.IO;
 using System.Collections;
@@ -231,7 +232,11 @@ class Run{
 
         public static void Method20()
         {
-            
+            // Interface sample2 Polymorphism
+            var encoder = new Mail.VideoEncoder();
+            encoder.RegisterNotificationChannel(new Mail.MailNotificationChannel());
+            encoder.RegisterNotificationChannel(new Mail.SmsNotificationChannel());
+            encoder.Encode(new Mail.Video());
 
         }
 

@@ -1,9 +1,18 @@
 namespace Console01.Mails
 {
-    public class MailService
+    public interface IMailable
     {
-        public void Send(Mail01 mail){
+        void Send();
+    }
+    public class MailService : IMailable
+    {
+        public void Send(Mail mail){
             System.Console.WriteLine($"sending email...");
+        }
+
+        public void Send()
+        {
+            System.Console.WriteLine("sending email...");
         }
     }
 }
