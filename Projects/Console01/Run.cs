@@ -25,7 +25,7 @@ class Run{
         }
 
     
-    public static void Method02(){
+        public static void Method02(){
             // here we test the StaticSample Class. calling StaticMethod01() without initiating the object. 
             StaticSample.StaticMethod01();
         }
@@ -79,7 +79,6 @@ class Run{
             v01.Reset();
             System.Console.WriteLine($"v01.Parts.Count = {v01.Parts.Count}");
             // v01.Parts.Count = 0, to fix this, we add readonly modifier to Parts field, alternatively you can use const variable to achieve same thing.
-
         }
 
         public static void Method07()
